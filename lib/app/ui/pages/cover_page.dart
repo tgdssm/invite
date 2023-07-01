@@ -32,10 +32,6 @@ class _CoverPageState extends State<CoverPage>
     return Scaffold(
       body: SafeArea(
         child: Container(
-          height: MediaQuery.sizeOf(context).height,
-          padding: const EdgeInsets.symmetric(
-            vertical: 20,
-          ),
           alignment: Alignment.center,
           decoration: const BoxDecoration(
             image: DecorationImage(
@@ -56,202 +52,208 @@ class _CoverPageState extends State<CoverPage>
               ),
               Positioned(
                 top: -100,
-                right: -60,
+                left: -200,
                 child: Transform.rotate(
                   angle: 180,
                   child: Image.asset('assets/images/footprint.gif'),
                 ),
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SlideTransition(
-                    position: animation,
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 40),
-                      child: Image.asset(
-                        'assets/images/pomo.png',
-                        height: 100,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const Text(
-                    'CHÁ DE BEBÊ',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'HARRYP',
-                      fontSize: 25,
-                    ),
-                  ),
-                  const Text(
-                    'LUIZ   LEORIO',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'HARRYP',
-                      fontSize: 80,
-                    ),
-                  ),
-                  Row(
+              Container(
+                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                height: MediaQuery.sizeOf(context).height,
+                child: SingleChildScrollView(
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const Text(
-                        'SÁBADO',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'HARRYP',
-                          fontSize: 20,
+                      SlideTransition(
+                        position: animation,
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 40),
+                          child: Image.asset(
+                            'assets/images/pomo.png',
+                            height: 100,
+                          ),
                         ),
                       ),
-                      Image.asset(
-                        'assets/images/scar.png',
-                        width: 50,
-                        color: Colors.yellowAccent,
+                      const SizedBox(
+                        height: 20,
                       ),
                       const Text(
-                        '15\nJULHO',
+                        'CHÁ DE BEBÊ',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'HARRYP',
-                          fontSize: 20,
+                          fontSize: 25,
                         ),
                       ),
-                      Image.asset(
-                        'assets/images/scar.png',
-                        width: 50,
-                        color: Colors.yellowAccent,
-                      ),
                       const Text(
-                        '15h30',
+                        'LUIZ LEORIO',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'HARRYP',
-                          fontSize: 20,
+                          fontSize: 80,
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            'SÁBADO',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'HARRYP',
+                              fontSize: 20,
+                            ),
+                          ),
+                          Image.asset(
+                            'assets/images/scar.png',
+                            width: 50,
+                            color: Colors.yellowAccent,
+                          ),
+                          const Text(
+                            '15\nJULHO',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'HARRYP',
+                              fontSize: 20,
+                            ),
+                          ),
+                          Image.asset(
+                            'assets/images/scar.png',
+                            width: 50,
+                            color: Colors.yellowAccent,
+                          ),
+                          const Text(
+                            '15h30',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'HARRYP',
+                              fontSize: 20,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 50,),
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(BottomToTopBuilder(child: const TooltipsListPage()));
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.brown,
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          width: 200,
+                          height: 50,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Image.asset(
+                                'assets/images/lamp.png',
+                                height: 30,
+                                color: Colors.white,
+                              ),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              const Text(
+                                'DICAS',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 50,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      InkWell(
+                        onTap: () async {
+                          await launchUrl(
+                            Uri.parse(
+                                "https://www.google.com/maps/place/Ac%C3%A1cia+Festas/@-17.3477582,-44.9554606,17z/data=!3m1!4b1!4m6!3m5!1s0xaa0ba5f93e83f7:0x18872a9b69772232!8m2!3d-17.3477633!4d-44.9528803!16s%2Fg%2F11b6dq86n7?entry=ttu"),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.brown,
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          width: 200,
+                          height: 50,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/images/localization.png',
+                                height: 15,
+                                color: Colors.white,
+                              ),
+                              const Text(
+                                'LOCALIZAÇÃO',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      InkWell(
+                        onTap: () async {
+                          const message = 'Estarei lá!';
+                          const phone = '5538999501703';
+                          if (MediaQuery.sizeOf(context).width > 1000) {
+                            await launchUrl(
+                                Uri.parse('https://wa.me//$phone?text=$message'));
+                          } else {
+                            await launchUrl(Uri.parse(
+                                'whatsapp://send?phone=$phone&text=$message'));
+                          }
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.brown,
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          width: 200,
+                          height: 50,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/images/pomo.png',
+                                height: 30,
+                                color: Colors.white,
+                              ),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              const Text(
+                                'CONFIRMAR\nPRESENÇA',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
                   ),
-                  const Spacer(),
-                  InkWell(
-                    onTap: () {
-                      print('object');
-                      Navigator.of(context).push(BottomToTopBuilder(child: const TooltipsListPage()));
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.brown,
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      width: 200,
-                      height: 50,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Image.asset(
-                            'assets/images/lamp.png',
-                            height: 30,
-                            color: Colors.white,
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          const Text(
-                            'DICAS',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 50,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  InkWell(
-                    onTap: () async {
-                      await launchUrl(
-                        Uri.parse(
-                            "https://www.google.com/maps/place/Ac%C3%A1cia+Festas/@-17.3477582,-44.9554606,17z/data=!3m1!4b1!4m6!3m5!1s0xaa0ba5f93e83f7:0x18872a9b69772232!8m2!3d-17.3477633!4d-44.9528803!16s%2Fg%2F11b6dq86n7?entry=ttu"),
-                      );
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.brown,
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      width: 200,
-                      height: 50,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/localization.png',
-                            height: 15,
-                            color: Colors.white,
-                          ),
-                          const Text(
-                            'LOCALIZAÇÃO',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  InkWell(
-                    onTap: () async {
-                      const message = 'Estarei lá!';
-                      const phone = '5538999501703';
-                      if (MediaQuery.sizeOf(context).width > 1000) {
-                        await launchUrl(
-                            Uri.parse('https://wa.me//$phone?text=$message'));
-                      } else {
-                        await launchUrl(Uri.parse(
-                            'whatsapp://send?phone=$phone&text=$message'));
-                      }
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.brown,
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      width: 200,
-                      height: 50,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/pomo.png',
-                            height: 30,
-                            color: Colors.white,
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          const Text(
-                            'CONFIRMAR\nPRESENÇA',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ],
           ),
