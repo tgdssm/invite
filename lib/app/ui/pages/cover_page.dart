@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:invite/app/ui/pages/tooltips_list_page.dart';
+import 'package:invite/app/ui/transitions/bottom_to_top.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CoverPage extends StatefulWidget {
   const CoverPage({Key? key}) : super(key: key);
@@ -29,6 +32,7 @@ class _CoverPageState extends State<CoverPage>
     return Scaffold(
       body: SafeArea(
         child: Container(
+          height: MediaQuery.sizeOf(context).height,
           padding: const EdgeInsets.symmetric(
             vertical: 20,
           ),
@@ -46,8 +50,8 @@ class _CoverPageState extends State<CoverPage>
                 left: 0,
                 child: Transform.rotate(
                   angle: 30,
-                  child:
-                      Image.asset('assets/images/footprint2.gif', height: 200),
+                  child: Image.asset('assets/images/footprint2.gif',
+                      height: 200),
                 ),
               ),
               Positioned(
@@ -83,7 +87,7 @@ class _CoverPageState extends State<CoverPage>
                     ),
                   ),
                   const Text(
-                    'LUIZ LEORIO',
+                    'LUIZ   LEORIO',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'HARRYP',
@@ -131,7 +135,10 @@ class _CoverPageState extends State<CoverPage>
                   ),
                   const Spacer(),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      print('object');
+                      Navigator.of(context).push(BottomToTopBuilder(child: const TooltipsListPage()));
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         color: Colors.brown,
@@ -159,7 +166,6 @@ class _CoverPageState extends State<CoverPage>
                               color: Colors.white,
                             ),
                           ),
-
                           const SizedBox(
                             width: 50,
                           ),
@@ -171,7 +177,12 @@ class _CoverPageState extends State<CoverPage>
                     height: 20,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () async {
+                      await launchUrl(
+                        Uri.parse(
+                            "https://www.google.com/maps/place/Ac%C3%A1cia+Festas/@-17.3477582,-44.9554606,17z/data=!3m1!4b1!4m6!3m5!1s0xaa0ba5f93e83f7:0x18872a9b69772232!8m2!3d-17.3477633!4d-44.9528803!16s%2Fg%2F11b6dq86n7?entry=ttu"),
+                      );
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         color: Colors.brown,
@@ -201,7 +212,17 @@ class _CoverPageState extends State<CoverPage>
                     height: 20,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () async {
+                      const message = 'Estarei lá!';
+                      const phone = '5538999501703';
+                      if (MediaQuery.sizeOf(context).width > 1000) {
+                        await launchUrl(
+                            Uri.parse('https://wa.me//$phone?text=$message'));
+                      } else {
+                        await launchUrl(Uri.parse(
+                            'whatsapp://send?phone=$phone&text=$message'));
+                      }
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         color: Colors.brown,
