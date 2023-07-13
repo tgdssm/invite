@@ -5,14 +5,26 @@ final hygiene = [
   'Pacote de fraldas e Lenços umedecidos.',
   'Fraldas de pano e Pomada para assaduras',
   'Fraldas de pano e Lenços umedecidos',
-  'Sabone e Shampoo neutro para bebê'
+  'Sabone e Shampoo neutro para bebê',
+  'Toalha de banho com capuz',
+  'Esterilizador de mamadeiras de microondas',
+  'lixeira com pedal',
+  'Trocador de bolsa',
+  'Aspirador nasal',
 ];
 
 final food = [
   'Babador',
   'Copinho com alça para bebê',
   'Paninho de boca',
-  'Aquecedor de mamadeira'
+  'Aquecedor de mamadeira',
+  'Talheres de alimentação',
+  'Pratos de alimentação'
+];
+
+final toys = [
+  'Mordedor',
+  'Brinquedos para banho'
 ];
 
 final clothes = [
@@ -24,10 +36,19 @@ final clothes = [
 ];
 
 final room = [
-  'Travesseiro antissufocante',
+  'Travesseiro antirrefluxo',
   'Jogo de lençol para berço',
   'Protetor de colchão',
   'Almofadas protetoras de berço',
+  'Manta',
+  'Cobertor',
+  'Fronhas'
+];
+
+final others = [
+  'Bolsas de bebe pequena, media ou grande',
+  'Mosquiteiro para carrinho de bebê',
+  'Lençois para carrinho',
 ];
 
 class TooltipsListPage extends StatefulWidget {
@@ -82,6 +103,8 @@ class _TooltipsListPageState extends State<TooltipsListPage> {
                   expandable('Alimentação', food, context),
                   expandable('Roupas', clothes, context),
                   expandable('Quarto', room, context),
+                  expandable('Brinquedos', toys, context),
+                  expandable('Outros', others, context),
                 ],
               ),
             ],

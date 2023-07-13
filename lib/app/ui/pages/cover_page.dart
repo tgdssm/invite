@@ -46,8 +46,8 @@ class _CoverPageState extends State<CoverPage>
                 left: 0,
                 child: Transform.rotate(
                   angle: 30,
-                  child: Image.asset('assets/images/footprint2.gif',
-                      height: 200),
+                  child:
+                      Image.asset('assets/images/footprint2.gif', height: 200),
                 ),
               ),
               Positioned(
@@ -59,7 +59,8 @@ class _CoverPageState extends State<CoverPage>
                 ),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                 height: MediaQuery.sizeOf(context).height,
                 child: SingleChildScrollView(
                   child: Column(
@@ -99,7 +100,7 @@ class _CoverPageState extends State<CoverPage>
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
-                            'SÁBADO',
+                            'DOMINGO',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontFamily: 'HARRYP',
@@ -112,7 +113,7 @@ class _CoverPageState extends State<CoverPage>
                             color: Colors.yellowAccent,
                           ),
                           const Text(
-                            '15\nJULHO',
+                            '16\nJULHO',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontFamily: 'HARRYP',
@@ -125,7 +126,7 @@ class _CoverPageState extends State<CoverPage>
                             color: Colors.yellowAccent,
                           ),
                           const Text(
-                            '15h30',
+                            '16h',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontFamily: 'HARRYP',
@@ -134,10 +135,13 @@ class _CoverPageState extends State<CoverPage>
                           ),
                         ],
                       ),
-                      const SizedBox(height: 50,),
+                      const SizedBox(
+                        height: 50,
+                      ),
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).push(BottomToTopBuilder(child: const TooltipsListPage()));
+                          Navigator.of(context).push(BottomToTopBuilder(
+                              child: const TooltipsListPage()));
                         },
                         child: Container(
                           decoration: BoxDecoration(
@@ -180,7 +184,8 @@ class _CoverPageState extends State<CoverPage>
                         onTap: () async {
                           await launchUrl(
                             Uri.parse(
-                                "https://www.google.com/maps/place/Ac%C3%A1cia+Festas/@-17.3477582,-44.9554606,17z/data=!3m1!4b1!4m6!3m5!1s0xaa0ba5f93e83f7:0x18872a9b69772232!8m2!3d-17.3477633!4d-44.9528803!16s%2Fg%2F11b6dq86n7?entry=ttu"),
+                              "https://www.google.com/maps/place/La+Belle+Eventos/@-17.3225936,-44.9212009,17z/data=!3m1!4b1!4m6!3m5!1s0xaa0d4eced062cd:0x88cf85a73146d902!8m2!3d-17.3225936!4d-44.918626!16s%2Fg%2F11h4xhbwyb?entry=ttu"
+                            ),
                           );
                         },
                         child: Container(
@@ -216,8 +221,8 @@ class _CoverPageState extends State<CoverPage>
                           const message = 'Estarei lá!';
                           const phone = '5538999501703';
                           if (MediaQuery.sizeOf(context).width > 1000) {
-                            await launchUrl(
-                                Uri.parse('https://wa.me//$phone?text=$message'));
+                            await launchUrl(Uri.parse(
+                                'https://wa.me//$phone?text=$message'));
                           } else {
                             await launchUrl(Uri.parse(
                                 'whatsapp://send?phone=$phone&text=$message'));
